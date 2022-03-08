@@ -70,4 +70,25 @@ button {
     color: #fff;
     border: 1.5px solid #00CDE4;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+button::after {
+    content: "";
+    background: #00CDE4;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    border-radius: 5px;
+    left: -5px;
+    bottom: 0;
+    color: #fff;
+    z-index: -1;
+    border: 1.5px solid transparent;
+    transition: .6s;
+}
+button:hover::after{
+    width: 105%;
+    border: none;
 }
